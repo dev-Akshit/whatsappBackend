@@ -45,12 +45,12 @@ app.use("/api/message", messageRoutes);
 const onlineUsers = new Map();
 
 const emitOnlineUsers = () => {
-  console.log("Emitting online users:", Array.from(onlineUsers.keys()));
+  // console.log("Emitting online users:", Array.from(onlineUsers.keys()));
   io.emit("onlineUsers", Array.from(onlineUsers.keys()));
 };
 
 io.on("connection", (socket) => {
-  console.log(`User connected: ${socket.id}`);
+  // console.log(`User connected: ${socket.id}`);
 
   // Handle user online
   socket.on("userOnline", (userId) => {
